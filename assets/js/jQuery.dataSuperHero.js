@@ -15,14 +15,14 @@ jQuery.fn.dataSuperHero = function (id) {
 
 function displayHero(data) {
   $("#hero-image").attr("src", data.image.url).attr("alt", data.name);
-  $("#hero-name").append(`${data.name}`);
-  $("#hero-connections").append(`${data.connections["group-affiliation"]}`);
-  $("#hero-publisher").append(`${data.biography.publisher}`);
-  $("#hero-occupation").append(`${data.work.occupation}`);
-  $("#hero-first-appearance").append(`${data.biography["first-appearance"]}`);
-  $("#hero-height").append(`${data.appearance.height}`);
-  $("#hero-weight").append(`${data.appearance.weight}`);
-  $("#hero-aliases").append(`${data.biography.aliases}`);
+  $("#hero-name").html(`Nombre: ${data.name}`);
+  $("#hero-connections").html(`<b>Conexiones: </b>${data.connections["group-affiliation"]}`);
+  $("#hero-publisher").html(`<em>Publicado por: </em>${data.biography.publisher}`);
+  $("#hero-occupation").html(`<em>Ocupación: </em>${data.work.occupation}`);
+  $("#hero-first-appearance").html(`<em>Primera aparición: </em>${data.biography["first-appearance"]}`);
+  $("#hero-height").html(`<em>Altura: </em>${data.appearance.height}`);
+  $("#hero-weight").html(`<em>Peso: </em>${data.appearance.weight}`);
+  $("#hero-aliases").html(`<em>Alias: </em>${data.biography.aliases}`);
   $("#hero-container").removeClass("d-none");
 }
 
