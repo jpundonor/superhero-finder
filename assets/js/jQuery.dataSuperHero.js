@@ -15,18 +15,14 @@ jQuery.fn.dataSuperHero = function (id) {
 
 function displayHero(data) {
   $("#hero-image").attr("src", data.image.url).attr("alt", data.name);
-  $("#hero-name").text(`Nombre: ${data.name}`);
-  $("#hero-connections").text(
-    `Conexiones: ${data.connections["group-affiliation"]}`
-  );
-  $("#hero-publisher").text(`Publicado por: ${data.biography.publisher}`);
-  $("#hero-occupation").text(`Ocupación: ${data.work.occupation}`);
-  $("#hero-first-appearance").text(
-    `Primera aparición: ${data.biography["first-appearance"]}`
-  );
-  $("#hero-height").text(`Altura: ${data.appearance.height}`);
-  $("#hero-weight").text(`Peso: ${data.appearance.weight}`);
-  $("#hero-aliases").text(`Alias: ${data.biography.aliases}`);
+  $("#hero-name").append(`${data.name}`);
+  $("#hero-connections").append(`${data.connections["group-affiliation"]}`);
+  $("#hero-publisher").append(`${data.biography.publisher}`);
+  $("#hero-occupation").append(`${data.work.occupation}`);
+  $("#hero-first-appearance").append(`${data.biography["first-appearance"]}`);
+  $("#hero-height").append(`${data.appearance.height}`);
+  $("#hero-weight").append(`${data.appearance.weight}`);
+  $("#hero-aliases").append(`${data.biography.aliases}`);
   $("#hero-container").removeClass("d-none");
 }
 
